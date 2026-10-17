@@ -1,38 +1,91 @@
-# Vue-Gestion-Ordinateurs
+# Gestion d’un parc informatique
 
-This template should help get you started developing with Vue 3 in Vite.
+## Présentation
 
-## Recommended IDE Setup
+Cette application web permet de gérer un parc informatique à l’aide de Vue.js 3. Elle permet d’afficher, d’ajouter, de modifier et de supprimer des ordinateurs.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Fonctionnalités
 
-## Recommended Browser Setup
+* Affichage de la liste des ordinateurs.
+* Ajout d’un nouvel ordinateur.
+* Modification des informations d’un ordinateur.
+* Suppression avec confirmation.
+* Recherche par modèle ou processeur.
+* Tri des ordinateurs par mémoire RAM.
+* Affichage du nombre total d’ordinateurs.
+* Validation des champs obligatoires.
+* Sauvegarde des données dans le navigateur avec `localStorage`.
+* Conservation des données après actualisation de la page.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Technologies utilisées
 
-## Customize configuration
+* Vue.js 3
+* JavaScript
+* Vue Router
+* HTML5
+* CSS3
+* Vite
+* LocalStorage
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Structure du projet
 
-## Project Setup
+```text
+src/
+├── assets/
+│   └── images/
+├── components/
+│   └── OrdinateurCard.vue
+├── data/
+│   └── ordinateurs.js
+├── router/
+│   └── index.js
+├── views/
+│   ├── ListeOrdinateurs.vue
+│   └── EditOrdinateur.vue
+├── App.vue
+└── main.js
+```
 
-```sh
+## Installation et lancement
+
+### 1. Cloner le projet
+
+```bash
+git clone https://github.com/talbi-elyes-1/Vue-Gestion-Ordinateurs.git
+```
+
+### 2. Accéder au dossier
+
+```bash
+cd Vue-Gestion-Ordinateurs
+```
+
+### 3. Installer les dépendances
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 4. Lancer l’application
 
-```sh
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+Ouvrir ensuite l’adresse locale affichée dans le terminal, généralement `http://localhost:5173/`.
 
-```sh
-npm run build
-```
+Sous Windows PowerShell, si la commande `npm` rencontre un problème d’exécution, utiliser `npm.cmd` à la place.
+
+## Navigation
+
+* `/ordinateurs` : afficher la liste des ordinateurs.
+* `/ordinateurs/ajouter` : ajouter un ordinateur.
+* `/ordinateurs/modifier/:id` : modifier un ordinateur existant.
+
+## Stockage des données
+
+Les informations sont enregistrées dans le `localStorage` du navigateur. Elles restent disponibles après l’actualisation de la page sur le même navigateur.
+
+## Auteur
+
+Projet réalisé dans le cadre d’un TP Vue.js 3 — Gestion d’un parc informatique.
