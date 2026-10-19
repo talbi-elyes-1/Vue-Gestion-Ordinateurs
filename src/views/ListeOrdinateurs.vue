@@ -6,13 +6,28 @@ import { ordinateursExemple } from '../data/ordinateurs'
 
 const router = useRouter()
 
-const ordinateurs = ref(
-  JSON.parse(localStorage.getItem('ordinateurs')) || ordinateursExemple
+// Charger les ordinateurs enregistrés
+const ordinateursEnregistres = JSON.parse(
+  localStorage.getItem('ordinateurs')
 )
 
-if (!localStorage.getItem('ordinateurs')) {
-  localStorage.setItem('ordinateurs', JSON.stringify(ordinateurs.value))
-}
+const ordinateurs = ref(
+  ordinateursEnregistres || ordinateursExemple
+)
+
+// Mettre à jour les chemins des photos
+ordinateurs.value.forEach((ordinateur) => {
+  const ordinateurExemple = ordinateursExemple.find(
+    (o) => o.id === ordinateur.id
+  )
+
+  if (ordinateurExemple) {
+    ordinateur.photo = ordinateurExemple.photo
+  }
+})
+
+// Enregistrer les données mises à jour
+localStorage.setItem('ordinateurs', JSON.stringify(ordinateurs.value))
 
 const recherche = ref('')
 const triMemoire = ref(false)
